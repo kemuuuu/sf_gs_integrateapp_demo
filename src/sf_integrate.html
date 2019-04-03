@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <style>
+      body {
+        font-family: 'Kosugi Maru', sans-serif;
+      }
+      .search-box {
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+      .create-box {
+        margin-left: 10px;
+      }
+      .inner-box {
+        width: 90%;
+      }
+      .search-box {
+        margin-top: 10px;
+      }
+      .search-btn {
+        margin-left: 5px;
+      }
+      .refresh-btn {
+        width: 90%;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search-box">
+      <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="keyword" class="sr-only">キーワード</label>
+          <input style="margin-top:7px" type="text" class="form-control form-control-sm" id="keyword" placeholder="keyword...">
+        </div>
+        <button id="search_btn" class="btn btn-primary btn-sm search-btn">検索</button>
+      </form>
+    </div>
+
+    <button id="refresh" type="button" class="btn btn-secondary btn-lg btn-block refresh-btn">Sheet Refresh</button>
+
+    <div style="margin: 5px;">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a href="#tab1" class="nav-link active" data-toggle="tab">フォームで作成</a>
+        </li>
+        <li class="nav-item">
+          <a href="#tab2" class="nav-link" data-toggle="tab">Sheetから作成</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-content create-box">
+      <div id="tab1" class="tab-pane active">
+        <div class="inner-box">
+          <div class="form-group">
+            <lable>お客様名</lable>
+            <input class="form-control form-control-sm" id="Account_Name" name="Account_Name" type="text" />
+          </div>
+          <div class="form-group">
+            <label>フリガナ(喪主)</label>
+            <input class="form-control form-control-sm" id="Account_Kana" name="Account_Kana" type="text" />
+          </div>
+          <div class="form-group">
+            <lable>電話</lable>
+            <input class="form-control form-control-sm" id="Account_Phone" name="Account_Phone" type="text" />
+          </div>
+          <div class="form-group">
+            <lable>携帯電話番号</lable>
+            <input class="form-control form-control-sm" id="Account_Mobile" name="Account_Mobile" type="text" />
+          </div>
+          <div class="form-group">
+            <lable>Fax</lable>
+            <input class="form-control form-control-sm" id="Account_Fax" name="Account_Fax" type="text" />
+          </div>
+          <div class="form-group">
+            <lable>メールアドレス</lable>
+            <input class="form-control form-control-sm" id="Account_Mail" name="Account_Mail" type="text" />
+          </div>
+          <div class="form-group">
+            <label>合計施工数</label>
+            <input class="form-control form-control-sm" id="Account_Enforcement" name="Account_Enforcement" type="text" />
+          </div>
+          <div class="form-group">
+            <label>生年月日</label>
+            <input class="form-control form-control-sm" id="Account_Birth" name="Account_Birth" type="date" />
+          </div>
+          <div class="form-group">
+            <label>都道府県</label>
+            <input class="form-control form-control-sm" id="Account_State" name="Account_State" type="text" />
+          </div>
+          <div class="form-group">
+            <label>市区郡</label>
+            <input class="form-control form-control-sm" id="Account_City" name="Account_City" type="text" />
+          </div>
+          <div class="form-group">
+            <label>町名番地</label>
+            <input class="form-control form-control-sm" id="Account_Street" name="Account_Street" type="text" />
+          </div>
+          <div class="form-group">
+            <label>心配な方-名前</label>
+            <input class="form-control form-control-sm" id="prior_contact_name" name="prior_contact_name" type="text" />
+          </div>
+          <div class="form-group">
+            <label>お問合せ受付日</label>
+            <input class="form-control form-control-sm" id="prior_contact_date" name="prior_contact_date" type="text" />
+          </div>
+          <div class="form-group">
+            <label>心配な方-都道府県</label>
+            <input class="form-control form-control-sm" id="prior_contact_prefecture" name="prior_contact_prefecture" type="text" />
+          </div>
+          <div class="form-group">
+            <label>心配な方-市区郡</label>
+            <input class="form-control form-control-sm" id="prior_contact_city" name="prior_contact_city" type="text" />
+          </div>
+          <div class="form-group">
+            <label>心配な方-町名・番地</label>
+            <input class="form-control form-control-sm" id="prior_contact_street" name="prior_contact_street" type="text" />
+          </div>
+          <div class="form-group">
+            <label>備考</label>
+            <input class="form-control form-control-sm" id="prior_contact_remarks" name="prior_contact_remarks" type="text" />
+          </div>
+          <button id="create_btn" class="btn btn-primary btn-lg btn-block">レコード作成</button>
+        </div>
+      </div>
+      <div id="tab2" class="tab-pane">
+        <div class="inner-box">
+          <button id="create_btn_from_sheet" class="btn btn-primary btn-lg btn-block">レコード作成</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+
+//    const tab1 = document.getElementById('tab1')
+//    tab1.onclick = (e) => { e.preventDefault() }
+
+//    const tab2 = document.getElementById('tab2')
+//    tab2.onclick = (e) => { e.preventDefault() }
+
+    const search_btn = document.getElementById('search_btn')
+    search_btn.onclick = (e) => {
+      e.preventDefault()
+      search()
+    }
+
+    const create_btn = document.getElementById('create_btn')
+    create_btn.onclick = (e) => {
+      e.preventDefault()
+      create()
+    }
+
+    const create_btn_from_sheet = document.getElementById('create_btn_from_sheet')
+    create_btn_from_sheet.onclick = e => {
+      e.preventDefault()
+      createFromSheet()
+    }
+
+    const refresh = document.getElementById('refresh')
+    refresh.onclick = e => {
+      e.preventDefault()
+      resetSheet()
+    }
+
+    function search() {
+      const keyword = document.getElementById('keyword').value
+      google.script.run
+      .withSuccessHandler((ret, element) => { element.disabled = false })
+      .withFailureHandler((msg, element) => { element.disabled = false })
+      .withUserObject(this)
+      .search(keyword)
+    }
+
+    function create() {
+
+      const accountRecord = {
+        Name: document.getElementById('Account_Name').value,
+        furigana__c: document.getElementById('Account_Kana').value,
+        Phone: document.getElementById('Account_Phone').value,
+        Field5__c: document.getElementById('Account_Mobile').value,
+        Fax: document.getElementById('Account_Fax').value,
+        Field6__c: document.getElementById('Account_Mail').value,
+        //Fieldseinen__c: document.getElementById('Account_Birth').value,
+        // BillingPostalCode?: string
+        BillingState: document.getElementById('Account_State').value,
+        BillingCity: document.getElementById('Account_City').value,
+        BillingStreet: document.getElementById('Account_Street').value 
+      }
+
+      const priorRecord = {
+        Name: document.getElementById('prior_contact_name').value,
+        //contact_reception_date__c: document.getElementById('prior_contact_date').value,
+        address_prefectures__c: document.getElementById('prior_contact_prefecture').value,
+        address_city__c: document.getElementById('prior_contact_city').value,
+        town_name_address__c: document.getElementById('prior_contact_street').value,
+        remarks__c: document.getElementById('prior_contact_remarks').value
+      }
+
+      //const accountName = document.getElementById('Account_Name').value
+      //const accountKana = document.getElementById('Account_Kana').value
+      //const accountPhone = document.getElementById('Account_Phone').value
+      //const accountmobile = document.getElementById('Account_Mobile').value
+      //const accountFax = document.getElementById('Account_Fax').value
+      //const accountMail = document.getElementById('Account_Mail').value
+      //const accountEnforcement = document.getElementById('Account_Enforcement').value
+      //const accountBirth = document.getElementById('Account_Birth').value
+      //const accountState = document.getElementById('Account_State').value
+      //const accountCity = document.getElementById('Account_City').value
+      //const accountStreet = document.getElementById('Account_Street').value
+
+      //const priorName = document.getElementById('prior_contact_name').value
+      //const priorDate = document.getElementById('prior_contact_date').value
+      //const priorState = document.getElementById('prior_contact_prefecture').value
+      //const priorCity = document.getElementById('prior_contact_city').value
+      //const priorStreet = document.getElementById('prior_contact_street').value
+      //const priorRemarks = document.getElementById('prior_contact_remarks').value
+
+      google.script.run
+      .withSuccessHandler((ret, element) => { 
+        element.disabled = false 
+      })
+      .withFailureHandler((msg, element) => { element.disabled = false })
+      .withUserObject(this)
+      .create(accountRecord, priorRecord)
+    }
+
+    function createFromSheet() {
+      google.script.run
+      .withSuccessHandler((ret, element) => { element.disabled = false })
+      .withFailureHandler((msg, element) => { element.disabled = false })
+      .withUserObject(this)
+      .createFromSheet()
+    }
+
+    function resetSheet() {
+      google.script.run
+      .withSuccessHandler((ret, element) => { element.disabled = false })
+      .withFailureHandler((msg, element) => { element.disabled = false })
+      .withUserObject(this)
+      .refresh()
+    }
+
+  </script>
+</html>
+
+
